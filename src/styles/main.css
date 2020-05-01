@@ -19,7 +19,7 @@ header {
   align-items: center;
   justify-content: center;
 
-  background-image: url("../assets/jewel.gif");
+  background-image: url("../assets/jewel-min.gif");
   background-position: center;
   background-size: cover;
   box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
@@ -29,7 +29,7 @@ header {
   text-align: center;
 }
 
-.brand > h1 {
+.brand>h1 {
   text-transform: uppercase;
   font-size: 7vmin;
   margin-bottom: 4px;
@@ -38,7 +38,7 @@ header {
   text-shadow: -3px 0 0 rgba(255, 0, 0, 0.7), 3px 0 0 rgba(0, 255, 255, 0.7);
 }
 
-.brand > h2 {
+.brand>h2 {
   font-size: 4.5vmin;
   font-family: "Oswald", sans-serif;
   text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
@@ -74,7 +74,7 @@ header {
   animation-play-state: paused;
 }
 
-.carrossel > div {
+.carrossel>div {
   background-position: center;
   background-size: cover;
   height: var(--size-height);
@@ -83,7 +83,7 @@ header {
 
 .gif {
   height: 400px;
-  background-image: url("../assets/jewel.gif");
+  background-image: url("../assets/jewel-min.gif");
   background-position: center;
   background-size: cover;
   box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
@@ -131,18 +131,23 @@ header {
   30% {
     transform: translateX(0);
   }
+
   35% {
     transform: translateX(calc(var(--size-width) * -1));
   }
+
   65% {
     transform: translateX(calc(var(--size-width) * -1));
   }
+
   70% {
     transform: translateX(calc(var(--size-width) * -2));
   }
+
   98% {
     transform: translateX(calc(var(--size-width) * -2));
   }
+
   100% {
     transform: translateX(0);
   }
