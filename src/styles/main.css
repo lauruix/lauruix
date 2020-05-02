@@ -22,23 +22,25 @@ nav {
   z-index: 1;
 }
 
-nav>a {
+nav > a {
   color: black;
   text-decoration: none;
   font-size: 2.5vmin;
   flex-grow: 2;
   text-align: center;
   text-shadow: -2px 0 0 rgba(255, 0, 0, 0.7), 2px 0 0 rgba(0, 255, 255, 0.7);
+
+  transition: text-shadow 0.3s;
 }
 
-nav>a:hover {
+nav > a:hover {
   text-shadow: none;
 }
 
 header {
   position: relative;
   margin-bottom: 70px;
-  height: 55vh;
+  height: 100vh;
 
   display: flex;
   align-items: center;
@@ -54,7 +56,7 @@ header {
   text-align: center;
 }
 
-.brand>h1 {
+.brand > h1 {
   text-transform: uppercase;
   font-size: 7vmin;
   margin-bottom: 4px;
@@ -63,10 +65,37 @@ header {
   text-shadow: -3px 0 0 rgba(255, 0, 0, 0.7), 3px 0 0 rgba(0, 255, 255, 0.7);
 }
 
-.brand>h2 {
+.brand > h2 {
   font-size: 4.5vmin;
   font-family: "Oswald", sans-serif;
   text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+}
+
+.arrow {
+  position: absolute;
+  top: 88vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+.arrow > span {
+  display: block;
+  width: 5vh;
+  height: 5vh;
+
+  border-bottom: 1vh solid #000;
+  border-right: 1vh solid #000;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: down 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
 }
 
 .linha {
@@ -83,7 +112,11 @@ header {
   letter-spacing: 2px;
 }
 
-.legenda:hover {
+.legenda > h3 {
+  transition: text-shadow 0.3s;
+}
+
+.legenda > h3:hover {
   text-shadow: -2px 0 0 rgba(255, 0, 0, 0.7), 2px 0 0 rgba(0, 255, 255, 0.7);
 }
 
@@ -95,9 +128,8 @@ header {
 }
 
 .carrossel-container:hover {
-  box-shadow:
-    -4px -4px 8px 3px rgba(0, 255, 255, 0.28),
-    4px 4px 8px 3px rgba(255, 0, 0, 0.28)
+  box-shadow: -4px -4px 8px 3px rgba(0, 255, 255, 0.28),
+    4px 4px 8px 3px rgba(255, 0, 0, 0.28);
 }
 
 .carrossel {
@@ -110,7 +142,7 @@ header {
   animation-play-state: paused;
 }
 
-.carrossel>div {
+.carrossel > div {
   background-position: center;
   background-size: cover;
   height: var(--size-height);
@@ -163,6 +195,22 @@ header {
   background-image: url("https://images.unsplash.com/photo-1468866576576-de8a9bf61f92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=963&q=80");
 }
 
+@keyframes down {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+}
+
 @keyframes sliding {
   30% {
     transform: translateX(0);
@@ -190,13 +238,12 @@ header {
 }
 
 @media (max-width: 480px) {
-
   :root {
     --size-width: 100vw;
     --size-height: 70vh;
   }
 
-  nav>a {
+  nav > a {
     color: black;
     text-decoration: none;
     font-size: 4vmin;
@@ -226,7 +273,7 @@ header {
     transform: translate(-50%, -50%);
   }
 
-  .arrow>span {
+  .arrow > span {
     display: block;
     width: 9vw;
     height: 9vw;
@@ -246,8 +293,13 @@ header {
   }
 
   .linha {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     margin-top: 40px;
+  }
+
+  .reverse {
+    flex-direction: column-reverse;
   }
 
   .legenda {
@@ -275,7 +327,6 @@ header {
     margin-bottom: 5vh;
   }
 
-
   @keyframes down {
     0% {
       opacity: 0;
@@ -291,5 +342,4 @@ header {
       transform: rotate(45deg) translate(20px, 20px);
     }
   }
-
 }
