@@ -7,7 +7,7 @@
 
 :root {
   --size-width: 60vw;
-  --size-height: 500px;
+  --size-height: 70vh;
 }
 
 nav {
@@ -22,7 +22,7 @@ nav>a {
   color: black;
   text-decoration: none;
   font-size: 2.5vmin;
-  flex: 1;
+  flex-grow: 2;
   text-align: center;
   text-shadow: -3px 0 0 rgba(255, 0, 0, 0.7), 3px 0 0 rgba(0, 255, 255, 0.7);
 }
@@ -30,7 +30,7 @@ nav>a {
 header {
   position: relative;
   margin-bottom: 70px;
-  height: 400px;
+  height: 55vh;
 
   display: flex;
   align-items: center;
@@ -99,13 +99,13 @@ header {
 }
 
 .gif {
-  height: 400px;
+  height: 50vh;
   background-image: url("../assets/jewel-min.gif");
   background-position: center;
   background-size: cover;
   box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
-  margin-top: 80px;
-  margin-bottom: 70px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 
 .img-janela {
@@ -168,4 +168,109 @@ header {
   100% {
     transform: translateX(0);
   }
+}
+
+@media (max-width: 480px) {
+
+  :root {
+    --size-width: 100vw;
+    --size-height: 70vh;
+  }
+
+  nav>a {
+    color: black;
+    text-decoration: none;
+    font-size: 4vmin;
+    flex-grow: 2;
+    text-shadow: -2px 0 0 rgba(255, 0, 0, 0.7), 2px 0 0 rgba(0, 255, 255, 0.7);
+  }
+
+  header {
+    position: relative;
+    margin-bottom: 36px;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../assets/jewel-min.gif");
+    background-position: center;
+    background-size: cover;
+    box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+  }
+
+  .arrow {
+    position: absolute;
+    top: 88vmax;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+
+  .arrow>span {
+    display: block;
+    width: 9vw;
+    height: 9vw;
+    border-bottom: 1vw solid #000;
+    border-right: 1vw solid #000;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: down 2s infinite;
+  }
+
+  .arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+  }
+
+  .arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+  }
+
+  .linha {
+    display: inline-block;
+    margin-top: 40px;
+  }
+
+  .legenda {
+    font-family: "Crimson Text", serif;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5vw;
+    margin-top: 5vw;
+  }
+
+  .carrossel-container {
+    overflow: hidden;
+    width: var(--size-width);
+    height: var(--size-height);
+    box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.35);
+  }
+
+  .gif {
+    height: 40vh;
+    background-image: url("../assets/jewel-min.gif");
+    background-position: center;
+    background-size: cover;
+    box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+
+
+  @keyframes down {
+    0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+    }
+  }
+
 }
